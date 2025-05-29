@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            width: 350px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 10px 20px;
+            margin: 10px 5px 0 0;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+
+        input[type="reset"] {
+            background-color: #6c757d;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #5a6268;
+        }
+
+        ::placeholder {
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <form action="./submit.html">
+
+        <!-- Email -->
+        <input type="text" 
+               pattern="[a-zA-Z0-9._%+-]+@(gmail|yahoo|outlook)\.(com|in|org|edu)" 
+               placeholder="Email" 
+               name="email" 
+               required><br>
+
+        <!-- Password -->
+        <input type="password" 
+               pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{6,}" 
+               name="password" 
+               placeholder="Password" 
+               required><br>
+
+        <!-- Date -->
+        <input type="text" 
+               pattern="\d{1,2}/\d{1,2}/\d{4}" 
+               class="datepicker" 
+               name="date" 
+               placeholder="Date (dd/mm/yyyy)" 
+               required><br>
+
+        <!-- Submit & Reset -->
+        <input type="submit">
+        <input type="reset">
+
+    </form>
+</body>
+</html>
